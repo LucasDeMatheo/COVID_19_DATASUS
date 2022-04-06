@@ -18,13 +18,13 @@ If it is no longer possible to access the original file in the link, it was uplo
 -  6 – Unfortunately, a lot of information that could be relevant is not in the dataset.   
 
 **Those were the summary of the first steps on Data Cleaning. Now many other processes will be applied.**   
-  1 – All columns’ names left were translated to English.  
-  2 – A missing data analysis was conducted for every column. Many contained at least 1 missing data. Some had more than 50% of the data missing.   
-  3 – A individual analysis by columns hat to be conducted. Some were dropped, some were filled.  
-  4 – A huge issue with patients’ age was detected. Some had more than 100 years, some much more (max = 390). Another integrity problem. Here we have two options, exclude those over 100 years or turn them to NaN and impose a value based on KNN algorithm. I chose to exclude, as we have a massive dataset. The other option can be tested. (204 records on this situation).  
-  5 – Symptoms and Conditions were split into new columns, one column for each unique value found with them.   
-  6 – A binary column with conditions was also generated (with or without previous health conditions).  
-  7 – Every value was later translated to English.  
-  8 – A new file was generated to be used in another notebook (EDA and Analytics)  
+-  1 – All columns’ names left were translated to English.  
+-  2 – A missing data analysis was conducted for every column. Many contained at least 1 missing data. Some had more than 50% of the data missing.   
+-  3 – A individual analysis by columns hat to be conducted. Some were dropped, some were filled.  
+-  4 – A huge issue with patients’ age was detected. Some had more than 100 years, some much more (max = 390). Another integrity problem. Here we have two options, exclude those over 100 years or turn them to NaN and impose a value based on KNN algorithm. I chose to exclude, as we have a massive dataset. The other option can be tested. (204 records on this situation).  
+-  5 – Symptoms and Conditions were split into new columns, one column for each unique value found with them.   
+-  6 – A binary column with conditions was also generated (with or without previous health conditions).  
+-  7 – Every value was later translated to English.  
+-  8 – A new file was generated to be used in another notebook (EDA and Analytics)  
 
 **56% of the original dataset remained after all procedures.**   
