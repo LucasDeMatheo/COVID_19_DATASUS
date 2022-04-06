@@ -7,7 +7,7 @@ This dataset was obtained from the SUS website - Brazilian Unified Health System
 In 2019, the spread of a coronavirus has begun which in 2020 received the status of a pandemic. At that time, many questions were raised about the disease spread, such as which symptoms were more likely to be manifested, severity, lethality among many others. In Brazil it was no different, we had many cases of the disease, which led researchers to race against time to understand more and more what could be done.
 
 In this work, I had access to a Brazilian Ministry of Health dataset, published on a CSV file with 1,000,000 reported cases from admissions on Rio de Janeiro’s hospitals, between January 2020 and June 2021. In this dataset, several variables were collected for everyone, but how many of these are useful, and how many are correctly collected? Let's start this project by Cleaning the extracted data from https://covid.saude.gov.br/ . 
-If it is no longer possible to access the original file in the link, it was uploaded to this repository as: data-rj-1.csv
+If it is no longer possible to access the original file in the link, it was uploaded to this repository as: data-rj-1.csv (https://drive.google.com/drive/folders/1CHaj5hqv3xd8p2J13YYjsr6xUnDvD8EP?usp=sharing)
 
 **The code used for this process was uploaded as (DataPreprocessing - DataSUS - COVID19 - Rio de Janeiro.ipynb).**  
 -  1 – The ID column served no purpose and was excluded. (No duplicated ID was found)  
@@ -27,4 +27,4 @@ If it is no longer possible to access the original file in the link, it was uplo
 -  7 – Every value was later translated to English.  
 -  8 – A new file was generated to be used in another notebook (EDA and Analytics)  
 
-**56% of the original dataset remained after all procedures.**   
+**56% of the original dataset remained after all procedures. - DataSUS_PreProcessed**   
