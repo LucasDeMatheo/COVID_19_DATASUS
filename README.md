@@ -9,13 +9,13 @@ In 2019, the spread of a coronavirus has begun which in 2020 received the status
 In this work, I had access to a Brazilian Ministry of Health dataset, published on a CSV file with 1,000,000 reported cases from admissions on Rio de Janeiro’s hospitals, between January 2020 and June 2021. In this dataset, several variables were collected for everyone, but how many of these are useful, and how many are correctly collected? Let's start this project by Cleaning the extracted data from https://covid.saude.gov.br/ . 
 If it is no longer possible to access the original file in the link, it was uploaded to this repository as: data-rj-1.csv
 
-The code used for this process was uploaded as (DataPreprocessing - DataSUS - COVID19 - Rio de Janeiro.ipynb).  
-  1 – The ID column served no purpose and was excluded. (No duplicated ID was found)  
-  2 – Birthday (dataNascimento) was not inserted and for this reason, it was excluded.  
-  3 – This dataset was labeled as from Rio de Janeiro, and for this reason, every other state found in the dataset was excluded. First integrity problem found. (Even if they came from other states, by hospital transfer, this information is not clear)  
-  4 – Every state has an ID number associated with them. All ID number was dropped. Every column with redundant information was excluded.   
-  5 – Every column with undefined values was excluded (Note: these are not a classic missing data problem, nor they are NaN numbers. Here, we face whole columns missing the information). Another integrity problem.  
-  6 – Unfortunately, a lot of information that could be relevant is not in the dataset.   
+>The code used for this process was uploaded as (DataPreprocessing - DataSUS - COVID19 - Rio de Janeiro.ipynb).  
+>  1 – The ID column served no purpose and was excluded. (No duplicated ID was found)  
+>  2 – Birthday (dataNascimento) was not inserted and for this reason, it was excluded.  
+>  3 – This dataset was labeled as from Rio de Janeiro, and for this reason, every other state found in the dataset was excluded. First integrity problem found. (Even >if they came from other states, by hospital transfer, this information is not clear)  
+>  4 – Every state has an ID number associated with them. All ID number was dropped. Every column with redundant information was excluded.   
+>  5 – Every column with undefined values was excluded (Note: these are not a classic missing data problem, nor they are NaN numbers. Here, we face whole columns >missing the information). Another integrity problem.  
+>  6 – Unfortunately, a lot of information that could be relevant is not in the dataset.   
 
 Those were the summary of the first steps on Data Cleaning. Now many other processes will be applied.   
   1 – All columns’ names left were translated to English.  
