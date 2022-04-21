@@ -78,6 +78,10 @@ Unfortunately, once again, discrepancies and integrity issues appeared. In summa
 
 A new file was generated with the DataSet modifications (DataSUS_PreProcessed_For_ML.csv)
 
+# Final considerations
+
+> A lot of data was incorrect, incomplete, lacking integrity. They needed strong cleaning, raising suspicions about the usability of the data to raise questions.  
+> Some doubts and suspicions could not be evaluated with the DataSet, the incompleteness of the database hampered some analyses. Possibly it will be necessary to look for data sources that complete them. But in the face of so many structural problems, is this the best way?  
 
 
 
