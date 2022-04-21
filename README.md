@@ -28,3 +28,62 @@ If it is no longer possible to access the original file in the link, it was uplo
 -  8 – A new file was generated to be used in another notebook (EDA and Analytics)  
 
 **56% of the original dataset remained after all procedures. - DataSUS_PreProcessed.csv**   
+
+# EDA and First Insights
+
+After having cleaned up the main issues found in the DataSet, let's start looking deeper into the data, finding more abnormalities or inconsistencies if they still exist, and getting the first observations and insights from the data contained therein. The DataSet used here is the same that was generated in the previous data cleaning step.   
+The first important aspect of this DataSet is that there is no death outcome. The only outcome herein is the result of COVID-19 tests.  
+
+An important assessment is to determine the balance of the data, as this has implications for the hypotheses raised and causes bias in machine learning algorithms. Here, it was observed that 38% of the results returned positive. Most of those tested were not identified with COVID-19. The data are from the beginning of the pandemic in Rio de Janeiro, which can raise hypotheses such as if the tests were handled widely in the population and/or if the methods used were adequate. We have information about the symptoms of the people tested and the types of tests, so we can test these hypotheses further.  
+
+But first, let's look at how the results are distributed by the sample people’s age.  
+
+![Imagem1](https://user-images.githubusercontent.com/10830272/164477460-219e839e-7533-40fa-9ba6-8efa9d658db5.png)
+
+Apparently, there is a gap between positives and negatives that decreases with the aging of the population (correlation = -0.68).  
+
+![Imagem2](https://user-images.githubusercontent.com/10830272/164477570-60f3f174-91a6-4b53-848d-3f602e4bd8a1.png)
+
+Elderly people seek hospitals when they have evidence of the disease or are they more susceptible to it?  
+As for the type of test used, we know that the type should not influence the result, but each test has its specification and accuracy, and, they have different operating protocols. In this case, an evaluation of the 3 main protocols used was performed.  
+
+![Imagem3](https://user-images.githubusercontent.com/10830272/164477807-0b5245d0-612e-4ec4-a2ac-be8748e0734a.png)
+
+Drawing attention to the Antigen test, which differs from the Antibody and RT-PCR tests. RT-PCR identified more positive cases. To better understand this, a time analysis can help.  
+
+![Imagem4](https://user-images.githubusercontent.com/10830272/164477913-01401eaa-54f5-40fe-b38e-bf2645e412be.png)
+
+The Antigen tests were applied at the end of the time series under analysis, with RT-PCR being applied more than the other two during almost the entire spectrum of the second wave recorded. This information raises some suspicion about Antigen Tests.  
+
+![Imagem5](https://user-images.githubusercontent.com/10830272/164478031-2e45e060-7c77-4a6d-8b6f-ebaf9c595400.png)
+
+By recalculating the proportions over the end of the time series, it was possible to observe that Antigen and Antibody converged to a similar ratio, while RT-PCR, once again, is highlighted. RT-PCR, with all the information we already have about this test, proves to be better at discriminating between positive and negative tests.  
+Looking at the timeline again, one fact caught my attention.  
+- There are two well-highlighted waves of tests and well correlated (97%)  
+- Tests that return negative are almost always above positives  
+- There is no constant baseline for negatives  
+A non-constant negative baseline rises suspicious on a second factor not evidenced yet. (Are the tests or it handling that lack in discriminating COVID? Or is there an external factor that leads people to seek the hospital?)  
+
+![Imagem6](https://user-images.githubusercontent.com/10830272/164478177-f50e46dc-cfd7-4f1e-904f-1d979c981726.png)
+
+When analyzing the main symptoms, olfactory and gustatory disorders were the only symptoms that were more present in positive than negative cases (between them, they have a correlation of 72%). Using the Positive/Negative ratio as a cutting base, fever, dyspnea, cough, and headache are candidates for classifier symptoms of COVID. On the other hand, sore throat and runny nose are better to not associate with COVID. Asymptomatic are the most likely to be Negative cases.  
+
+![Imagem7](https://user-images.githubusercontent.com/10830272/164478300-c561dfb4-6003-4d03-9ee5-c857ecb7c2f1.png)
+
+Finally, attributes engineering was performed to create a column that shows the time elapsed between the notification of cases and the onset of symptoms, a variable that can influence the test result. Here it was shown that the more time passes, the more the chance of being a positive case.  
+
+![Imagem8](https://user-images.githubusercontent.com/10830272/164478415-b5b3e676-0d46-4048-976a-4b5fa8715bfe.png)
+
+Unfortunately, once again, discrepancies and integrity issues appeared. In summary about data integrity, much needs to be improved, this dataset will hardly be a good way to train an M.L. algorithm.  
+
+A new file was generated with the DataSet modifications (DataSUS_PreProcessed_For_ML.csv)
+
+
+
+
+
+
+
+
+
+
