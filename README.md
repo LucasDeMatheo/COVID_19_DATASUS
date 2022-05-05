@@ -11,7 +11,7 @@ If it is no longer possible to access the original file in the link, it was uplo
 
 **The code used for this process was uploaded as (DataPreprocessing - DataSUS - COVID19 - Rio de Janeiro.ipynb).**  
 -  1 – The ID column served no purpose and was excluded. (No duplicated ID was found)  
--  2 – Birthday (dataNascimento) was not inserted and for this reason, it was excluded.  
+-  2 – Birthday (dataNascimento) was not inserted and for this reason it was excluded.  
 -  3 – This dataset was labeled as from Rio de Janeiro, and for this reason, every other state found in the dataset was excluded. First integrity problem found. (Even if they came from other states, by hospital transfer, this information is not clear)  
 -  4 – Every state has an ID number associated with them. All ID number was dropped. Every column with redundant information was excluded.   
 -  5 – Every column with undefined values was excluded (Note: these are not a classic missing data problem, nor they are NaN numbers. Here, we face whole columns missing the information). Another integrity problem.  
